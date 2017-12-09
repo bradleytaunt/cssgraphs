@@ -1,0 +1,170 @@
+/*****************************************************************/
+/*****************************************************************/
+/*****************************************************************/
+/* CSS Graphs - Scatter Plot */
+/* Author:; Bradley Taunt */
+/* Inspired by the data design concepts of Edward Tufte */
+/*****************************************************************/
+/*****************************************************************/
+/*****************************************************************/
+
+
+/* All fallback table styling for screens less than 800px */
+/*****************************************************************/
+@media(max-width: 800px) {
+
+    #dot-plot-graph {
+        border-collapse: collapse;
+        margin: 0 auto;
+        max-width: 600px;
+        padding: 0 10px;
+        width: 100%;
+    }
+
+    #dot-plot-graph caption {
+        border-bottom: 1px solid #111;
+        font-size: 20px;
+        padding: 0 0 10px 10px;
+        text-align: left;
+    }
+
+    #dot-plot-graph tr th,
+    #dot-plot-graph tr td {
+        border-bottom: 1px solid #E7E7E7;
+        padding: 10px;
+    }
+
+    #dot-plot-graph .dot p { display: inline-block; }
+
+    #dot-plot-graph tbody tr th {
+        text-align: left;
+        text-transform: capitalize;
+    }
+
+    #dot-plot-graph tbody tr td {
+        text-align: right;
+    }
+
+    #plot-ticks {
+        display: none;
+    }
+
+}
+
+/* All styling for bar graphs only when 800px or wider */
+/*****************************************************************/
+@media(min-width: 800px) {
+
+    #dot-plot-graph {
+        background: transparent;
+        display: block;
+        height: 340px;
+        margin: 1.1em 0 0;
+        padding: 0;
+        position: relative;
+        width: 600px;
+    }
+
+    #dot-plot-graph caption {
+        caption-side: top;
+        font-size: 20px;
+        letter-spacing: .5px;
+        position: absolute;
+        text-align: left;
+        top: -60px;
+        width: 600px;
+        z-index: 10;
+    }
+
+    #dot-plot-graph tr, #dot-plot-graph th, #dot-plot-graph td {
+        margin: 0;
+        padding: 0;
+        position: absolute;
+        text-align: center;
+        width: 80px;
+        z-index: 2;
+    }
+
+    #dot-plot-graph tbody {
+        display: block;
+        height: 340px;
+    }
+
+    #dot-plot-graph .section:after {
+        border-top: 2px dashed #E7E7E7;
+        content:'';
+        height: 1px;
+        left: 20px;
+        position: absolute;
+        top: 12px;
+        width: 580px;
+    }
+
+    #dot-plot-graph #section-1 { top: 20px; }
+    #dot-plot-graph #section-1 .dot { left: 580px; }
+
+    #dot-plot-graph #section-2 { top: 80px; }
+    #dot-plot-graph #section-2 .dot { left: 400px; }
+
+    #dot-plot-graph #section-3 { top: 140px; }
+    #dot-plot-graph #section-3 .dot { left: 280px; }
+
+    #dot-plot-graph #section-4 { top: 200px; }
+    #dot-plot-graph #section-4 .dot { left: 220px; }
+
+    #dot-plot-graph #section-5 { top: 260px; }
+    #dot-plot-graph #section-5 .dot { left: 140px; }
+
+    #dot-plot-graph #section-6 { top: 320px; }
+    #dot-plot-graph #section-6 .dot { left: 80px; }
+
+    #dot-plot-graph tbody th {
+        left: -5em;
+        font-style: italic;
+        font-weight: normal;
+        text-align: right;
+        vertical-align: top;
+    }
+
+    #dot-plot-graph .dot {
+        background: #111;
+        border-radius: 50%;
+        cursor: pointer;
+        height: 14px;
+        overflow: visible;
+        position: absolute;
+        top: 6px;
+        transition: 250ms all ease;
+        width: 14px;
+    }
+    #dot-plot-graph .dot:hover {
+        transform: scale(1.15);
+    }
+
+    #dot-plot-graph .dot p {
+        margin-top: 20px;
+        opacity: 0;
+        pointer-events: none;
+        transition: 300ms all ease;
+    }
+    #dot-plot-graph .dot:hover > p,
+    #dot-plot-graph .dot:focus > p {
+        opacity: 1;
+    }
+
+    #plot-ticks {
+        display: block;
+        position: relative;
+        width: 600px;
+        z-index: 1;
+    }
+
+    #plot-ticks .tick {
+        display: inline-block;
+        margin-left: -3px; /* Inline-block messy fix */
+        position: relative;
+        text-align: right;
+        width: 200px; /* Divide this by numOfAxisItems by #ticks width */
+    }
+
+}

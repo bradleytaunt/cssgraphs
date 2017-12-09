@@ -1,0 +1,204 @@
+/*****************************************************************/
+/*****************************************************************/
+/*****************************************************************/
+/* CSS Graphs - Bar */
+/* Author: Bradley Taunt */
+/* Inspired by the data design concepts of Edward Tufte */
+/*****************************************************************/
+/*****************************************************************/
+/*****************************************************************/
+
+/* All fallback table styling for screens less than 800px */
+/*****************************************************************/
+@media(max-width: 800px) {
+
+    #bar-graph {
+        border-collapse: collapse;
+        margin: 0 auto;
+        max-width: 600px;
+        padding: 0 10px;
+        width: 100%;
+    }
+
+    #bar-graph caption {
+        border-bottom: 1px solid #111;
+        font-size: 20px;
+        padding: 0 0 10px 10px;
+        text-align: left;
+    }
+
+    #bar-graph tr th,
+    #bar-graph tr td {
+        border-bottom: 1px solid #E7E7E7;
+        padding: 10px;
+    }
+
+    #bar-graph tbody tr th {
+        text-align: left;
+    }
+
+    #bar-graph thead tr th,
+    #bar-graph tbody tr td {
+        text-align: right;
+    }
+
+    #bar-ticks {
+        display: none;
+    }
+
+}
+
+/* All styling for bar graphs only when 800px or wider */
+/*****************************************************************/
+@media(min-width: 800px) {
+
+    #bar-graph {
+        background: transparent;
+        display: block;
+        height: 300px;
+        margin: 1.1em 0 0;
+        padding: 0;
+        position: relative;
+        width: 600px;
+    }
+
+    #bar-graph caption {
+        caption-side: top;
+        font-size: 20px;
+        letter-spacing: .5px;
+        position: absolute;
+        text-align: left;
+        top: -80px;
+        width: 600px;
+        z-index: 10;
+    }
+
+    #bar-graph tr, #bar-graph th, #bar-graph td {
+        bottom: 3px;
+        margin: 0;
+        padding: 0;
+        position: absolute;
+        text-align: center;
+        width: 150px;
+        z-index: 2;
+    }
+
+    #bar-graph td { transition: all .3s ease; }
+    #bar-graph td:hover {
+        background-color: #111 !important;
+        color: white;
+    }
+
+    #bar-graph thead tr {
+        bottom: auto;
+        right: 0;
+        top: -46px;
+    }
+
+    #bar-graph thead th {
+        height: auto;
+        font-weight: 400;
+        padding: 0;
+        width: auto;
+    }
+
+    #bar-graph thead th.before {
+        line-height: 2;
+        right: 80px;
+    }
+    #bar-graph thead th.after {
+        line-height: 2;
+        right: 12px;
+    }
+    #bar-graph thead th.before:after,
+    #bar-graph thead th.after:after {
+        content: '';
+        height: 10px;
+        left: -15px;
+        position: absolute;
+        top: 10px;
+        width: 10px;
+    }
+    #bar-graph thead th.before:after { background: #E7E7E7; }
+    #bar-graph thead th.after:after { background: #C1C1C1; }
+
+    #bar-graph tbody tr {
+        height: 296px;
+        padding-top: 2px;
+    }
+
+    #bar-graph #section-1 { left: 25px; }
+    #bar-graph #section-1 .before { height: 280px; }
+    #bar-graph #section-1 .after { height: 78px; }
+
+    #bar-graph #section-2 { left: 225px; }
+    #bar-graph #section-2 .before { height: 215px; }
+    #bar-graph #section-2 .after { height: 90px; }
+
+    #bar-graph #section-3 { left: 425px; }
+    #bar-graph #section-3 .before { height: 285px; }
+    #bar-graph #section-3 .after { height: 85px; }
+
+    #bar-graph tbody th {
+        bottom: -1.75em;
+        font-weight: normal;
+        vertical-align: top;
+    }
+
+    #bar-graph .bar {
+        border-bottom: none;
+        border: 1px solid;
+        color: #000;
+        width: 50px;
+    }
+    #bar-graph .bar p { margin: 5px 0 0; padding: 0; }
+
+    #bar-graph tbody {
+        display: block;
+        height: 340px;
+    }
+
+    #bar-graph tbody .before {
+        background-color: #E7E7E7;
+        border-color: transparent;
+        left: 20px;
+    }
+
+    #bar-graph tbody .after {
+        background-color: #C1C1C1;
+        border-color: transparent;
+        left: 75px;
+    }
+
+    #bar-ticks {
+        display: block;
+        height: 300px;
+        left: 0;
+        margin-bottom: -300px;
+        position: relative;
+        top: -300px;
+        width: 600px;
+        z-index: 1;
+    }
+
+    #bar-ticks .tick {
+        border-bottom: 1px solid #E7E7E7;
+        height: 59px;
+        position: relative;
+        width: 600px;
+    }
+    #bar-ticks .tick:first-child {
+        border-top: 1px solid #E7E7E7;
+    }
+    #bar-ticks .tick:last-child {
+        border: 0;
+    }
+
+    #bar-ticks .tick p {
+        left: -3em;
+        margin: 0 0 0 0.5em;
+        position: absolute;
+        top: -0.8em;
+    }
+
+}
